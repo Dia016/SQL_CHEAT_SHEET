@@ -62,3 +62,77 @@ So, to truncate the "author" table, the statement will be written as:
 
 1
 TRUNCATE TABLE author;
+
+CREATE TABLE statement
+In the previous video, we saw the general syntax to create a table:
+
+1
+2
+3
+4
+5
+6
+CREATE TABLE TableName (
+   COLUMN1 datatype,
+   COLUMN2 datatype,
+   COLUMN3 datatype, 
+   ...
+);
+Copied!
+Consider the following examples:
+
+Create a TEST table with two columns - ID of type integer and NAME of type varchar. For this, we use the following SQL statement.
+1
+2
+3
+4
+CREATE TABLE TEST (
+   ID int,
+   NAME varchar(30)
+);
+Copied!
+Create a COUNTRY table with an integer ID column, a two-letter country code column, and a variable length country name column. For this, we may use the following SQL statement.
+1
+2
+3
+4
+5
+CREATE TABLE COUNTRY (
+   ID int,
+   CCODE char(2),
+   Name varchar(60)
+);
+Copied!
+In the example above, make ID a primary key. Then, the statement will be modified as shown below.
+1
+2
+3
+4
+5
+6
+CREATE TABLE COUNTRY (
+   ID int NOT NULL,
+   CCODE char(2),
+   Name varchar(60)
+   PRIMARY KEY (ID)
+);
+Copied!
+In the above example, the ID column has the NOT NULL constraint added after the datatype, meaning that it cannot contain a NULL or an empty value. This is added since the database does not allow Primary Keys to have NULL values.
+
+DROP TABLE
+If the table you are trying to create already exists in the database, you will get an error indicating table XXX.YYY already exists. To circumvent this error, create a table with a different name or first DROP the existing table. It is common to issue a DROP before doing a CREATE in test and development scenarios.
+
+The syntax to drop a table is:
+
+1
+DROP TABLE TableName;
+Copied!
+For example, consider that you wish to drop the contents of the table COUNTRY if a table exists in the dataset with the same name. In such a case, the code for the last example becomes
+
+DROP TABLE COUNTRY;
+CREATE TABLE COUNTRY (
+   ID int NOT NULL,
+   CCODE char(2),
+   Name varchar(60)
+   PRIMARY KEY (ID)
+);
