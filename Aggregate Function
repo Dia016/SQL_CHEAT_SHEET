@@ -1,0 +1,1 @@
+An aggregate function takes a collection of like values, such as all of the values in a column, as input, and returns a single value or null. Examples of aggregate functions include: sum, minimum, maximum, average, etc.
