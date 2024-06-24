@@ -1,0 +1,15 @@
+
+
+SQL contains date, time, and time stamp types. 
+
+In SQL, date has eight digits, time has six digits, time stamp has 20 digits, where XX represents month and ZZZZZZ represents micro seconds. 
+Functions exist to extract the day, month, day of month, day of week, day of year, week, hour, minute, second. Let us look at some examples of queries for date and time functions. 
+The day function can be used to extract the day portion from a date. Example, get the day portion for each sale date involving cat. Select day, rescue date from pet rescue where animal equals cat.
+Date and time functions can be used in the where clause. Example, get the number of sales during the month of May, ie. for Month 5, select count from pet rescue where month rescue date equals five. 
+You can also perform date or time arithmetic. Example, what date is it three days after each rescue date? Maybe you want to know this because the order needs to be processed within three days. 
+Select date_add, rescue date interval, three day from pet rescue. Special registers, current time and current date are also available. Example, find how many days have passed since each rescue date till now. 
+Select current date-rescue date from pet rescue. The result will be in years, months, days. Now you know that SQL contains date, time, and time stamp types. Date has eight digits, YYYMMDD, 
+time has six digits, HHMMSS, time stamp has 20 digits,YYYYXXDDHHMMSSZZZZZZ where XX represents month and ZZZZZZ represents microseconds,
+Functions exist to extract day, month, day of month day of week, day of year, week, hour, minute, second. Date and time functions can be used in the WHERE clause. 
+The day function can be used to extract the day portion from a date.
+
