@@ -28,3 +28,68 @@ This type of statement is useful for matching values in the where clause, if you
 You can also have one function operate on the output of another function. For example, to get unique cases for the animal column in uppercase: select DISTINCT (UPPERCASE(ANIMAL)) from PETRESCUE. 
 
 ---- we looked at some built-in SQL aggregate functions, such as sum, minimum, maximum, and average We also looked at scalar and string functions, such as round, lowercase, and uppercase.
+
+
+Aggregation Functions
+Write a query that calculates the total cost of all animal rescues in the PETRESCUE table.
+For this query, we will use the function SUM(COLUMN_NAME). The output of this query will be the total value of all elements in the column. The query for this question can be written as:
+
+1
+SELECT SUM(COST) FROM PETRESCUE;
+Copied!
+You can further assign a label to the query SUM_OF_COST.
+
+1
+SELECT SUM(COST) AS SUM_OF_COST FROM PETRESCUE;
+Copied!
+Write a query that displays the maximum quantity of animals rescued (of any kind).
+For this query, we will use the function MAX(COLUMN_NAME). The output of this query will be the maximum value of all elements in the column. The query for this question can be written as:
+
+1
+SELECT MAX(QUANTITY) FROM PETRESCUE;
+Copied!
+The query can easily be changed to display the minimum quantity using the MIN function instead.
+
+1
+SELECT MIN(QUANTITY) FROM PETRESCUE;
+Copied!
+Write a query that displays the average cost of animals rescued.
+For this query, we will use AVG(COLUMN_NAME). The output of this query will be the average of all elements in the column. The query for this question can be written as
+
+1
+SELECT AVG(COST) FROM PETRESCUE;
+
+Scalar Functions and String Functions
+Write a query that displays the rounded integral cost of each rescue.
+For this query, we will use the function ROUND(COLUMN_NAME, NUMBER_OF_DECIMALS). The output of this query will be the value of each element in the column rounded to the specified number of decimal places. 
+Note that the second argument is optional and, if omitted, results in rounding to an integer value. The query for this question can be written as:
+
+1
+SELECT ROUND(COST) FROM PETRESCUE;
+Copied!
+The query could also be written as:
+
+1
+SELECT ROUND(COST, 0) FROM PETRESCUE;
+Copied!
+In case the question was to round the value to 2 decimal places, the query would change to:
+
+1
+SELECT ROUND(COST, 2) FROM PETRESCUE;
+Copied!
+Write a query that displays the length of each animal name.
+For this query, we will use the function LENGTH(COLUMN_NAME). The output of this query will be the length of each element in the column. The query for this question can be written as:
+
+1
+SELECT LENGTH(ANIMAL) FROM PETRESCUE;
+Copied!
+Write a query that displays the animal name in each rescue in uppercase.
+For this query, we will use the function UCASE(COLUMN_NAME). The output of this query will be each element in the column in upper case letters. The query for this question can be written as:
+
+1
+SELECT UCASE(ANIMAL) FROM PETRESCUE;
+Copied!
+Just as easily, the user could ask for a lower case representation, and the query would be changed to:
+
+1
+SELECT LCASE(ANIMAL) FROM PETRESCUE;
