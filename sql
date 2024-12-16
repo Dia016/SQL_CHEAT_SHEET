@@ -1,7 +1,10 @@
+
 SQL Cheat Sheet: Basics
-
-
-Command	Syntax	Description	Example
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+Command	Syntax	
+Description	Example
+  
 SELECT	SELECT column1, column2, ... FROM table_name; 	SELECT statement is used to fetch data from a database.	SELECT city FROM placeofinterest;
 
 WHERE	SELECT column1, column2, ...FROM table_name WHERE condition;	WHERE clause is used to extract only those records that fulfill a specified condition.	SELECT * FROM placeofinterest WHERE city == 'Rome' ;
@@ -17,6 +20,8 @@ INSERT	INSERT INTO table_name (column1,column2,column3...) VALUES(value1,value2,
 UPDATE	UPDATE table_name SET[[column1]=[VALUES]] WHERE [condition];	UPDATE used to update the rows in the table.	UPDATE placeofinterest SET name = 'Niagara Falls' WHERE name = "Niagara Waterfalls";
 
 DELETE	DELETE FROM table_name WHERE [condition]; 	DELETE statement is used to remove rows from the table which are specified in the WHERE condition.	DELETE FROM placeofinterest WHERE city IN ('Rome','Vienna');
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 SQL Scripts - Uses and Applications
 SQL Scripts
@@ -62,7 +67,8 @@ It is advisable to keep the extension of the file as .sql.
 Upon importing this file in the phpMyAdmin interface, the commands in the file are run sequentially.
 Consider the following script
 
-
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+  
 DROP TABLE IF EXISTS PATIENTS;
 DROP TABLE IF EXISTS MEDICAL_HISTORY;
 DROP TABLE IF EXISTS MEDICAL_PROCEDURES;
@@ -109,7 +115,7 @@ CREATE TABLE MEDICAL_LOCATIONS (
   LOCATION_NAME VARCHAR(50),
   PRIMARY KEY (LOCATION_ID, DEPT_ID)
 );
-
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 SQL Cheat Sheet: CREATE TABLE, ALTER, DROP, TRUNCATE
 Command	Syntax	Description	Example
 CREATE TABLE	MySQL/DB2:  CREATE TABLE table_name (col1 datatype optional keyword, col2 datatype optional keyword,col3 datatype optional keyword,..., coln datatype optional keyword) 	
@@ -172,3 +178,4 @@ This displays the first name, last name, and department ID of employees, first s
 GROUP BY	SELECT column_name(s) FROM table_name GROUP BY column_name(s) 	GROUP BY clause is used in collaboration with the SELECT statement to arrange data with identical values into groups.	SELECT dep_id, COUNT(*) FROM employees GROUP BY dep_id;
 This returns the department IDs and the number of employees in them, grouped by the department IDs.
 HAVING	SELECT column_name(s) FROM table_name GROUP BY column_name(s) HAVING condition 	HAVING clause is used in conjunction with GROUP BY clause in collaboration with the SELECT statement in order to filter the data as per the given condition and then group as per identical values of a specified parameter.	SELECT DEP_ID, COUNT(*) AS "NUM_EMPLOYEES", AVG(SALARY) AS "AVG_SALARY" FROM EMPLOYEES GROUP BY DEP_ID HAVING count(*) < 4 ORDER BY AVG_SALARY;
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
