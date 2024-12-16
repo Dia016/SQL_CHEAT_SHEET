@@ -1,8 +1,10 @@
-An aggregate function takes a collection of like values, such as all of the values in a column, as input, and returns a single value or null. Examples of aggregate functions include: sum, minimum, maximum, average, etc.
+An aggregate function takes a collection of like values, such as all of the values in a column, as input, and returns a single value or null.
+Examples of aggregate functions include: sum, minimum, maximum, average, etc.
 
 When working with large data sets, it may be faster to use built-in functions, rather than first retrieving the data into your application and then executing functions on the retrieved data. 
 Note that it is also possible to create your own functions, that is, user-defined functions, in the database; but that is a more advanced topic. For the examples in this lesson, 
-let's consider this PETRESCUE table in a database for a pet rescue organization. It records rescue transaction details and includes the columns: ID, animal, quantity, cost, and rescue date.
+let's consider this PETRESCUE table in a database for a pet rescue organization. 
+It records rescue transaction details and includes the columns: ID, animal, quantity, cost, and rescue date.
 For the purposes of this lesson, we have populated it with several rows of data, as shown here. What are aggregate or column functions? 
 An aggregate function takes a collection of like values, such as all of the values in a column, as input, and returns a single value or null. 
 
@@ -13,6 +15,7 @@ For example, to add up all the values in the COST column, select SUM (COST) from
 It is possible to explicitly name the resulting column. For example, let's say we want to call the output column in the previous query, as SUM_OF_COST. select SUM(COST) as SUM_OF_COST from PETRESCUE. 
 Note the use of 'as' in this example. MINimum, as the name implies, is used to get the lowest value. Similarly, MAXimum is used to get the highest value. 
 For example, to get the maximum quantity of any animal rescue in a single transaction, select MAX(QUANTITY) from PETRESCUE. 
+
 Aggregate functions can also be applied on a subset of data instead of an entire column. For example, to get the minimum quantity of the ID column for dogs. 
 
 select MIN(ID) from PETRESCUE where animal equals dog. The Average (AVG) function is used to return the average or the mean value. For example, to specify the average value of cost, as: select AVG(COST) from PETRESCUE.
@@ -36,23 +39,22 @@ For this query, we will use the function SUM(COLUMN_NAME). The output of this qu
 
 1
 SELECT SUM(COST) FROM PETRESCUE;
-Copied!
 You can further assign a label to the query SUM_OF_COST.
 
 1
 SELECT SUM(COST) AS SUM_OF_COST FROM PETRESCUE;
-Copied!
+
 Write a query that displays the maximum quantity of animals rescued (of any kind).
 For this query, we will use the function MAX(COLUMN_NAME). The output of this query will be the maximum value of all elements in the column. The query for this question can be written as:
 
 1
 SELECT MAX(QUANTITY) FROM PETRESCUE;
-Copied!
+
 The query can easily be changed to display the minimum quantity using the MIN function instead.
 
 1
 SELECT MIN(QUANTITY) FROM PETRESCUE;
-Copied!
+
 Write a query that displays the average cost of animals rescued.
 For this query, we will use AVG(COLUMN_NAME). The output of this query will be the average of all elements in the column. The query for this question can be written as
 
@@ -66,29 +68,29 @@ Note that the second argument is optional and, if omitted, results in rounding t
 
 1
 SELECT ROUND(COST) FROM PETRESCUE;
-Copied!
+
 The query could also be written as:
 
 1
 SELECT ROUND(COST, 0) FROM PETRESCUE;
-Copied!
+
 In case the question was to round the value to 2 decimal places, the query would change to:
 
 1
 SELECT ROUND(COST, 2) FROM PETRESCUE;
-Copied!
+
 Write a query that displays the length of each animal name.
 For this query, we will use the function LENGTH(COLUMN_NAME). The output of this query will be the length of each element in the column. The query for this question can be written as:
 
 1
 SELECT LENGTH(ANIMAL) FROM PETRESCUE;
-Copied!
+
 Write a query that displays the animal name in each rescue in uppercase.
 For this query, we will use the function UCASE(COLUMN_NAME). The output of this query will be each element in the column in upper case letters. The query for this question can be written as:
 
 1
 SELECT UCASE(ANIMAL) FROM PETRESCUE;
-Copied!
+
 Just as easily, the user could ask for a lower case representation, and the query would be changed to:
 
 1
